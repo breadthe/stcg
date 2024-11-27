@@ -1,22 +1,13 @@
-# sv
+# STCG - Trading Card Game in Svelte 5
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A Trading Card Game concept partially modeled after [TCG Card Shop Simulator](https://store.steampowered.com/app/3070070/TCG_Card_Shop_Simulator/).
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
-```
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Install dependencies with `npm install` (or `pnpm install` or `yarn`)
+
+Start a development server:
 
 ```bash
 npm run dev
@@ -27,7 +18,7 @@ npm run dev -- --open
 
 ## Building
 
-To create a production version of your app:
+To create a production version of the app:
 
 ```bash
 npm run build
