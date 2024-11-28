@@ -5,6 +5,8 @@
 	import CurrentPack from '$lib/components/CurrentPack.svelte'
 	import PlayerCards from '$lib/components/PlayerCards.svelte'
 	import Stats from '$lib/components/Stats.svelte'
+	import HowToPlay from '$lib/components/HowToPlay.svelte'
+	import Credits from '$lib/components/Credits.svelte'
 	// import Changelog from '$lib/components/Changelog.svelte'
 	// import Showcase from '$lib/components/Showcase.svelte'
 
@@ -72,13 +74,16 @@
 
 <hr>
 
-<!-- <footer>
-	<Showcase />
+<footer>
+    <HowToPlay />
 
-	<hr>
+    <Credits />
+	<!-- <Showcase /> -->
 
-	<Changelog />
-</footer> -->
+	<!-- <hr> -->
+
+	<!-- <Changelog /> -->
+</footer>
 
 <style>
 	:root {
