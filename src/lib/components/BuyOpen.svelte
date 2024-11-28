@@ -91,49 +91,65 @@
 	<thead>
 		<tr>
 			<th>&nbsp;</th>
-			<th class="common-fg">Common Pack ${packPriceStore.common}</th>
-			<th class="rare-fg">Rare Pack ${packPriceStore.rare}</th>
-			<th class="epic-fg">Epic Pack ${packPriceStore.epic}</th>
-			<th class="legendary-fg">Legendary Pack ${packPriceStore.legendary}</th>
+			<th class="common-fg">Common Pack <br> ${packPriceStore.common}</th>
+			<th class="rare-fg">Rare Pack <br> ${packPriceStore.rare}</th>
+			<th class="epic-fg">Epic Pack <br> ${packPriceStore.epic}</th>
+			<th class="legendary-fg">Legendary Pack <br> ${packPriceStore.legendary}</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<th align="right">Buy</th>
-			<td class="">
-				<button type="button" onclick={() => buyPack('common')} class="button-buy-common" disabled={moneyStore.value < packPriceStore.common}>1 pack</button>
-				<button type="button" onclick={() => buyAll('common')} class="button-buy-common" disabled={moneyStore.value < packPriceStore.common}>{max_common_packs_that_can_be_bought} packs ${parseInt(max_common_packs_that_can_be_bought * packPriceStore.common, 10)}</button>
+			<td>
+                <div class="button-group">
+                    <button type="button" onclick={() => buyPack('common')} class="button-buy-common" disabled={moneyStore.value < packPriceStore.common}>1 pack</button>
+                    <button type="button" onclick={() => buyAll('common')} class="button-buy-common" disabled={moneyStore.value < packPriceStore.common}>{max_common_packs_that_can_be_bought} packs ${parseInt(max_common_packs_that_can_be_bought * packPriceStore.common, 10)}</button>
+                </div>
 			</td>
-			<td class="">
-				<button type="button" onclick={() => buyPack('rare')} class="button-buy-rare" disabled={moneyStore.value < packPriceStore.rare}>1 pack</button>
-				<button type="button" onclick={() => buyAll('rare')} class="button-buy-rare" disabled={moneyStore.value < packPriceStore.rare}>{max_rare_packs_that_can_be_bought} packs ${parseInt(max_rare_packs_that_can_be_bought * packPriceStore.rare, 10)}</button>
+			<td>
+                <div class="button-group">
+                    <button type="button" onclick={() => buyPack('rare')} class="button-buy-rare" disabled={moneyStore.value < packPriceStore.rare}>1 pack</button>
+                    <button type="button" onclick={() => buyAll('rare')} class="button-buy-rare" disabled={moneyStore.value < packPriceStore.rare}>{max_rare_packs_that_can_be_bought} packs ${parseInt(max_rare_packs_that_can_be_bought * packPriceStore.rare, 10)}</button>
+                </div>
 			</td>
-			<td class="">
-				<button type="button" onclick={() => buyPack('epic')} class="button-buy-epic" disabled={moneyStore.value < packPriceStore.epic}>1 pack</button>
-				<button type="button" onclick={() => buyAll('epic')} class="button-buy-epic" disabled={moneyStore.value < packPriceStore.epic}>{max_epic_packs_that_can_be_bought} packs ${parseInt(max_epic_packs_that_can_be_bought * packPriceStore.epic, 10)}</button>
+			<td>
+                <div class="button-group">
+                    <button type="button" onclick={() => buyPack('epic')} class="button-buy-epic" disabled={moneyStore.value < packPriceStore.epic}>1 pack</button>
+                    <button type="button" onclick={() => buyAll('epic')} class="button-buy-epic" disabled={moneyStore.value < packPriceStore.epic}>{max_epic_packs_that_can_be_bought} packs ${parseInt(max_epic_packs_that_can_be_bought * packPriceStore.epic, 10)}</button>
+                </div>
 			</td>
-			<td class="">
-				<button type="button" onclick={() => buyPack('legendary')} class="button-buy-legendary" disabled={moneyStore.value < packPriceStore.legendary}>1 pack</button>
-				<button type="button" onclick={() => buyAll('legendary')} class="button-buy-legendary" disabled={moneyStore.value < packPriceStore.legendary}>{max_legendary_packs_that_can_be_bought} packs ${parseInt(max_legendary_packs_that_can_be_bought * packPriceStore.legendary, 10)}</button>
+			<td>
+                <div class="button-group">
+                    <button type="button" onclick={() => buyPack('legendary')} class="button-buy-legendary" disabled={moneyStore.value < packPriceStore.legendary}>1 pack</button>
+                    <button type="button" onclick={() => buyAll('legendary')} class="button-buy-legendary" disabled={moneyStore.value < packPriceStore.legendary}>{max_legendary_packs_that_can_be_bought} packs ${parseInt(max_legendary_packs_that_can_be_bought * packPriceStore.legendary, 10)}</button>
+                </div>
 			</td>
 		</tr>
 		<tr>
 			<th align="right">Open</th>
-			<td class="">
-				<button type="button" onclick={() => openPack('common')} class="button-open-common" disabled={playerPacksStore.common === 0}>1 pack</button>
-				<button type="button" onclick={() => openAll('common')} class="button-open-common" disabled={playerPacksStore.common === 0}>all {playerPacksStore.common ? playerPacksStore.common : ''} packs</button>
+			<td>
+                <div class="button-group">
+                    <button type="button" onclick={() => openPack('common')} class="button-open-common" disabled={playerPacksStore.common === 0}>1 pack</button>
+                    <button type="button" onclick={() => openAll('common')} class="button-open-common" disabled={playerPacksStore.common === 0}>all {playerPacksStore.common ? playerPacksStore.common : ''} packs</button>
+                </div>
 			</td>
-			<td class="">
-				<button type="button" onclick={() => openPack('rare')} class="button-open-rare" disabled={playerPacksStore.rare === 0}>1 pack</button>
-				<button type="button" onclick={() => openAll('rare')} class="button-open-rare" disabled={playerPacksStore.rare === 0}>all {playerPacksStore.rare ? playerPacksStore.rare : ''} packs</button>
+			<td>
+                <div class="button-group">
+                    <button type="button" onclick={() => openPack('rare')} class="button-open-rare" disabled={playerPacksStore.rare === 0}>1 pack</button>
+                    <button type="button" onclick={() => openAll('rare')} class="button-open-rare" disabled={playerPacksStore.rare === 0}>all {playerPacksStore.rare ? playerPacksStore.rare : ''} packs</button>
+                </div>
 			</td>
-			<td class="">
-				<button type="button" onclick={() => openPack('epic')} class="button-open-epic" disabled={playerPacksStore.epic === 0}>1 pack</button>
-				<button type="button" onclick={() => openAll('epic')} class="button-open-epic" disabled={playerPacksStore.epic === 0}>all {playerPacksStore.epic ? playerPacksStore.epic : ''} packs</button>
+			<td>
+                <div class="button-group">
+                    <button type="button" onclick={() => openPack('epic')} class="button-open-epic" disabled={playerPacksStore.epic === 0}>1 pack</button>
+                    <button type="button" onclick={() => openAll('epic')} class="button-open-epic" disabled={playerPacksStore.epic === 0}>all {playerPacksStore.epic ? playerPacksStore.epic : ''} packs</button>
+                </div>
 			</td>
-			<td class="">
-				<button type="button" onclick={() => openPack('legendary')} class="button-open-legendary" disabled={playerPacksStore.legendary === 0}>1 pack</button>
-				<button type="button" onclick={() => openAll('legendary')} class="button-open-legendary" disabled={playerPacksStore.legendary === 0}>all {playerPacksStore.legendary ? playerPacksStore.legendary : ''} packs</button>
+			<td>
+                <div class="button-group">
+                    <button type="button" onclick={() => openPack('legendary')} class="button-open-legendary" disabled={playerPacksStore.legendary === 0}>1 pack</button>
+                    <button type="button" onclick={() => openAll('legendary')} class="button-open-legendary" disabled={playerPacksStore.legendary === 0}>all {playerPacksStore.legendary ? playerPacksStore.legendary : ''} packs</button>
+                </div>
 			</td>
 		</tr>
 	</tbody>
@@ -142,10 +158,29 @@
 <style>
 	table {
 		border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+	}
+	table th.common-fg,
+	table th.rare-fg,
+	table th.epic-fg,
+	table th.legendary-fg {
+        vertical-align: bottom;
 	}
 	table td {
-		padding: 0.2em 0.5em;
+		padding: 0.5rem 0.5rem;
+        vertical-align: top;
 	}
+
+    .button-group {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+    }
+
+    .button-group button {
+        flex: 1 1 0%;
+    }
 
 	.button-buy-common {
 		color: black;
