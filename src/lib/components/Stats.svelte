@@ -62,8 +62,13 @@
 	td {
 		padding: 0 0.5rem;
 		text-align: right;
-		font-size: 2em;
+		font-size: 1rem;
 	}
+    @media (min-width: 640px) {
+        td {
+            font-size: 2rem;
+        }
+    }
 
 	.player-funds {
 		color: white;
