@@ -21,6 +21,13 @@
 <style>
 	.current-pack {
 		display: flex;
-		gap: 2em;
+        flex-wrap: wrap;
+		gap: 1.5em;
 	}
+    @media (min-width: 640px) {
+        .current-pack {
+            gap: 2rem;
+        }
+    }
+
 </style>

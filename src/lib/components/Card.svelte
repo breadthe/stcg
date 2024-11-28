@@ -80,9 +80,16 @@
 		position: relative;
 		border: 2px solid;
 		border-color: var(--indigo-950);
-		width: 100px;
+        min-width: 80px;
 		aspect-ratio: 7/8;
+        font-size: 0.85rem;
 	}
+    @media (min-width: 640px) {
+        .card-inner {
+	    	min-width: 100px;
+            font-size: 1rem;
+        }
+    }
 
 	.overlay {
 		position: absolute;
@@ -227,13 +234,13 @@
 	.sequence {
 		position: absolute;
 		bottom: 0;
-		left: 0;
+		right: 0;
 		z-index: 1;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		border-radius: 100%;
-		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
 		padding: 4px;
 		min-width: 15px;
 		height: 15px;

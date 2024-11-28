@@ -92,9 +92,15 @@
 	.player-cards-wrapper {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 2em;
+		gap: 1.5rem;
 		overflow: auto;
 	}
+    @media (min-width: 640px) {
+        .player-cards-wrapper {
+            gap: 2rem;
+        }
+    }
+
 	.player-cards-value {
 		display: flex;
 		justify-content: space-between;
