@@ -7,6 +7,7 @@
 	import Stats from '$lib/components/Stats.svelte'
 	import HowToPlay from '$lib/components/HowToPlay.svelte'
 	import Credits from '$lib/components/Credits.svelte'
+	import SellBulk from '$lib/components/SellBulk.svelte';
 	// import Changelog from '$lib/components/Changelog.svelte'
 	// import Showcase from '$lib/components/Showcase.svelte'
 
@@ -34,14 +35,6 @@
 		sortByStore.value = 'id'
 		sortDirStore.value = 'desc'
 	}
-
-	function sellAll() {
-		playerCardsStore.sellAll()
-	}
-
-	function sellDuplicates() {
-		playerCardsStore.sellDuplicates()
-	}
 </script>
 
 <Stats />
@@ -57,14 +50,16 @@
 	</div>
 </nav>
 
-{#if playerCardsStore.value.length}
+<!-- {#if playerCardsStore.value.length}
 	<br>
 
 	<div>
 		<button type="button" onclick={sellAll} class="button-sell">sell all</button>
 		<button type="button" onclick={sellDuplicates} disabled={!playerCardsStore.hasDuplicates} class="button-sell">sell duplicates</button>
 	</div>
-{/if}
+{/if} -->
+
+<SellBulk />
 
 <br>
 
@@ -147,26 +142,12 @@
 		box-shadow: none;
 	}
 
-	/* ❓ what is this? used anywhere? */
-	:global(.button) {
-		box-shadow:
-			2px 2px 5px rgba(0, 0, 0, 0.1),
-			1px 1px 3px rgba(0, 0, 0, 0.3),
-			2px 2px 5px rgba(255, 255, 255, 0.1) inset,
-			0px 0px 7px rgba(255, 255, 255, 0.3) inset;
-		position: relative;
-		padding: 2px 10px;
-		text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.2);
-		/* outline: solid 1px black; */
-		/* font-style: italic; */
-		/* font-weight: medium; */
+	:global(.button-sell) {
+		background-color: aquamarine;
 	}
 
 	.button-reset {
 		color: white;
 		background-color: red;
-	}
-	:global(.button-sell) {
-		background-color: aquamarine;
 	}
 </style>
