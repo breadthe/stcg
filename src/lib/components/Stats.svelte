@@ -19,15 +19,15 @@
 			<td class="player-funds">${stripFloat(moneyStore.value)}</td>
 			<td class="player-packs">
 				<span class="common-fg" title="Common packs">{playerPacksStore.common}</span>
-				/ <span class="rare-fg" title="Rare packs">{playerPacksStore.rare}</span>
-				/ <span class="epic-fg" title="Epic packs">{playerPacksStore.epic}</span>
-				/ <span class="legendary-fg" title="Legendary packs">{playerPacksStore.legendary}</span>
+				<span class="rare-fg" title="Rare packs">{playerPacksStore.rare}</span>
+				<span class="epic-fg" title="Epic packs">{playerPacksStore.epic}</span>
+				<span class="legendary-fg" title="Legendary packs">{playerPacksStore.legendary}</span>
 			</td>
 			<td class="opened-packs">
 				<span class="common-fg" title="Common packs">{openedPacksStore.common}</span>
-				/ <span class="rare-fg" title="Rare packs">{openedPacksStore.rare}</span>
-				/ <span class="epic-fg" title="Epic packs">{openedPacksStore.epic}</span>
-				/ <span class="legendary-fg" title="Legendary packs">{openedPacksStore.legendary}</span>
+				<span class="rare-fg" title="Rare packs">{openedPacksStore.rare}</span>
+				<span class="epic-fg" title="Epic packs">{openedPacksStore.epic}</span>
+				<span class="legendary-fg" title="Legendary packs">{openedPacksStore.legendary}</span>
 			</td>
 			<td class="total-cards">{playerCardsStore.totalCount}</td>
 			<td class="unique-cards">{playerCardsStore.value.length}</td>
@@ -62,6 +62,7 @@
 	td {
 		padding: 0 0.5rem;
 		text-align: right;
+        vertical-align: top;
 		font-size: 1rem;
 	}
     @media (min-width: 640px) {
