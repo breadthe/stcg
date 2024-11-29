@@ -38,7 +38,7 @@
     {#if is_resetting}
         Are you sure?
         <br>
-        <em style="color: red">This wipes your collection and resets funds to ${moneyStore.value}!</em>
+        <em style="color: red">This wipes your collection and resets funds to $1000!</em>
         <br><br>
         <button type="button" onclick={() => is_resetting = false}>oops, cancel</button>
         <button type="button" onclick={reset} class="button-reset">yep, reset</button>
