@@ -8,7 +8,7 @@
 	class:border-silver={card.rarity === 2}
 	class:border-gold={card.rarity === 3}
 	class:border-transparent={card.rarity === 5}
-	class:rarity-5={card.rarity === 5}
+	class:full-art={card.rarity === 5}
 	>
 	<div class="card-middle"
 		class:border-silver={card.rarity === 1 || card.rarity === 2}
@@ -151,20 +151,6 @@
 	    50% { background-position: 100% 50%; }
 	    100% { background-position: 0% 50%; }
 	}
-	.gradient-text {
-    background: linear-gradient(
-        90deg,
-				#e74c3c, /* red */
-				#8e44ad, /* purple */
-        #3498db, /* blue */
-				#00dffc, /* cyan */
-        #2ecc71  /* green */
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent; /* Hides the actual text color */
-    display: inline-block;
-	}
 
 	main {
 		position: relative;
@@ -181,10 +167,6 @@
 		text-transform: uppercase;
 	}
 
-	/* .border-black {
-		border-color: black;
-	} */
-
 	.border-silver {
 		border-color: silver;
 	}
@@ -197,35 +179,7 @@
 		border-color: transparent;
 	}
 
-	/* none */
-	.rarity-0 {
-		background-color: white;
-		color: black;
-		border-color: rgba(0, 0, 0, 0.75);
-	}
-	/* First Edition */
-	.rarity-1 {
-		color: black;
-		border-color: silver;
-	}
-	/* Silver */
-	.rarity-2 {
-		/* border-color: blue; */
-		/* background-color: silver; */
-		color: black;
-	}
-	/* Gold */
-	.rarity-3 {
-		border-color: gold;
-		color: black;
-	}
-	/* EX */
-	.rarity-4 {
-		border-color: gold;
-		color: black;
-	}
-	/* Full Art */
-	.rarity-5 {
+	.full-art {
 		border-color: transparent;
 		background-color: salmon;
 		color: white;
