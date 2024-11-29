@@ -8,33 +8,10 @@
 	import HowToPlay from '$lib/components/HowToPlay.svelte'
 	import Credits from '$lib/components/Credits.svelte'
 	import SellBulk from '$lib/components/SellBulk.svelte';
+	import Reset from '$lib/components/Reset.svelte';
 	// import Changelog from '$lib/components/Changelog.svelte'
 	// import Showcase from '$lib/components/Showcase.svelte'
 
-	import { moneyStore, currentPackStore, openedPacksStore, playerPacksStore, playerCardsStore, sortByStore, sortDirStore } from '$lib/store.svelte.js'
-
-	function reset() {
-		currentPackStore.value = null
-
-		moneyStore.value = 1000
-
-		openedPacksStore.common = 0
-		openedPacksStore.rare = 0
-		openedPacksStore.epic = 0
-		openedPacksStore.legendary = 0
-		openedPacksStore.mythic = 0
-
-		playerCardsStore.value = []
-
-		playerPacksStore.common = 0
-		playerPacksStore.rare = 0
-		playerPacksStore.epic = 0
-		playerPacksStore.legendary = 0
-		playerPacksStore.mythic = 0
-
-		sortByStore.value = 'id'
-		sortDirStore.value = 'desc'
-	}
 </script>
 
 <Stats />
@@ -44,20 +21,8 @@
 <BuyOpen />
 
 <nav class="command-bar">
-	<div style="text-align:right; width:100%">
-		<br>
-		<button type="button" onclick={reset} class="button-reset">reset</button>
-	</div>
+    <Reset />
 </nav>
-
-<!-- {#if playerCardsStore.value.length}
-	<br>
-
-	<div>
-		<button type="button" onclick={sellAll} class="button-sell">sell all</button>
-		<button type="button" onclick={sellDuplicates} disabled={!playerCardsStore.hasDuplicates} class="button-sell">sell duplicates</button>
-	</div>
-{/if} -->
 
 <SellBulk />
 
@@ -95,18 +60,8 @@
 		color: goldenrod;
 	}
 
-	.command-bar {
-		display: flex;
-		justify-content: space-between;
-
-		/* display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 1em; */
-	}
-
 	:global(.common-fg) {
 		color: green;
-		/* color: slategray; */
 	}
 	:global(.rare-fg) {
 		color: blue;
@@ -146,8 +101,8 @@
 		background-color: aquamarine;
 	}
 
-	.button-reset {
-		color: white;
-		background-color: red;
+	.command-bar {
+		display: flex;
+		justify-content: space-between;
 	}
 </style>
