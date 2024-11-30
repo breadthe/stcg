@@ -18,6 +18,18 @@ export const packPriceStore = {
     },
 }
 
+// sell all cards valued at or below this amount
+let atOrBelowAmount = $state(1)
+export const AtOrBelowAmountStore = {
+    get value() {
+        return atOrBelowAmount
+    },
+    set value(val) {
+        atOrBelowAmount = parseInt(val, 10)
+        if (atOrBelowAmount < 1) atOrBelowAmount = 1
+    },
+}
+
 let money = $state(1000)
 export const moneyStore = {
     get value() {
@@ -189,6 +201,9 @@ export const playerCardsStore = {
     get hasDuplicates() {
         return playerCards.filter((card) => card.count > 1).length > 0
     },
+    get hasCardsAtOrBelowValue() {
+        return playerCards.filter((card) => card.price <= AtOrBelowAmountStore.value).length > 0
+    },
     set value(val) {
         playerCards = val
     },
@@ -226,8 +241,24 @@ export const playerCardsStore = {
     },
     sellDuplicates() {
         playerCards.forEach((card) => {
-            if (card.count > 1) playerCardsStore.sellCopies(card, parseInt(card.count - 1))
+            if (card.count > 1) playerCardsStore.sellCopies(card, parseInt(card.count - 1, 10))
         })
+    },
+    sellAtOrBelow() {
+        const at_or_below_cards = []
+        const remaining_cards = []
+
+        playerCards.forEach((card, ix) => {
+            if (card.price <= AtOrBelowAmountStore.value) {
+                at_or_below_cards.push(playerCards[ix])
+
+                money += card.price * card.count
+            } else {
+                remaining_cards.push(playerCards[ix])
+            }
+        })
+
+        playerCards = remaining_cards
     },
     // sell 1+ copies of a card
     sellCopies(card, copies = 1) {
@@ -235,10 +266,10 @@ export const playerCardsStore = {
 
         if (ix >= 0) {
             const found_card = playerCards[ix]
-            let total_amount
+            let total_amount = 0
 
             // sell 1+ copies of this card
-            if (copies > 0 && copies < found_card.count) {
+            if (copies > 0 && copies <= found_card.count) {
                 total_amount = found_card.price * copies
 
                 playerCards[ix].count -= copies
