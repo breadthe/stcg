@@ -22,7 +22,9 @@ export const packPriceStore = {
 let atOrBelowAmount = $state(1)
 export const AtOrBelowAmountStore = {
     get value() {
-        return atOrBelowAmount
+        if (isNaN(atOrBelowAmount)) return 1
+
+        return parseInt(atOrBelowAmount, 10)
     },
     set value(val) {
         atOrBelowAmount = parseInt(val, 10)
