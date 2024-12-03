@@ -22,13 +22,15 @@ export const packPriceStore = {
 let atOrBelowAmount = $state(1)
 export const AtOrBelowAmountStore = {
     get value() {
-        if (isNaN(atOrBelowAmount)) return 1
+        // Without the next line there's an internal Svelte warning when deleting the value in the input
+        // "The specified value "NaN" cannot be parsed, or is out of range."
+        // but I'm ok with that since the "Sell <=" button is disabled anyway.
+        // if (isNaN(atOrBelowAmount)) return 1
 
         return parseInt(atOrBelowAmount, 10)
     },
     set value(val) {
         atOrBelowAmount = parseInt(val, 10)
-        if (atOrBelowAmount < 1) atOrBelowAmount = 1
     },
 }
 
